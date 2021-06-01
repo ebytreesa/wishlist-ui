@@ -1,37 +1,40 @@
 import React, { useState } from "react";
 
-export class AddWish extends React.Component {
-  state = {
-    title: "",
-    description: "",
-    link: "",
-  };
+export class EditWish extends React.Component {
+  constructor(props) {
+    super(props);
+    const { id, title, description, link } = props.location.state.wish;
+    this.state = {
+      id,
+      title,
+      description,
+      link,
+    };
+  }
 
-  add = (e) => {
+  update = (e) => {
     e.preventDefault();
     if (
       this.state.title === "" ||
       this.state.description === "" ||
       this.state.link === ""
     ) {
-      alert("Alle feler skal udfyldes");
+      alert("Alle felter skal udfyldes");
       return;
     } else {
-      this.props.addWishHandler(this.state);
+      this.props.onUpdate(this.state);
       this.setState({ title: "", description: "", link: "" });
       this.props.history.push("/");
     }
-    console.log(this.state);
   };
   render() {
     return (
-      <form className="add-form" onSubmit={this.add}>
+      <form className="add-form" onSubmit={this.update}>
         <div className="form-controller">
           <label>Title</label>
           <input
             type="text"
             name="title"
-            placeholder="Add wish"
             onChange={(e) => this.setState({ title: e.target.value })}
             value={this.state.title}
           />
@@ -41,7 +44,6 @@ export class AddWish extends React.Component {
           <input
             type="text"
             name="dec"
-            placeholder="Add description"
             onChange={(e) => this.setState({ description: e.target.value })}
             value={this.state.description}
           />
@@ -51,15 +53,14 @@ export class AddWish extends React.Component {
           <input
             type="text"
             name="link"
-            placeholder="Add link"
             onChange={(e) => this.setState({ link: e.target.value })}
             value={this.state.link}
           />
         </div>
-        <input type="submit" value="Save wish" />
+        <input type="submit" value="Opdate" />
       </form>
     );
   }
 }
 
-export default AddWish;
+export default EditWish;
