@@ -1,6 +1,6 @@
 import React from "react";
 
-import Wish from "../components/Wish";
+import WishCard from "../components/WishCard";
 import { Link } from "react-router-dom";
 import { Box } from "@material-ui/core";
 
@@ -18,7 +18,7 @@ const WishList = (props) => {
       return props.wishes.map((wish) => {
         return (
           <Grid item sm={12} md={6}>
-            <Wish key={wish.id} wish={wish} onDelete={props.onDelete} />
+            <WishCard key={wish.id} wish={wish} onDelete={props.onDelete} />
           </Grid>
         );
       });

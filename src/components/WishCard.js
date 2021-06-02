@@ -15,11 +15,11 @@ import CardContent from '@material-ui/core/CardContent';
 import { DeleteOutlined } from "@material-ui/icons";
 import EditIcon from "@material-ui/icons/Edit";
 
-const Wish = (props) => {
+const WishCard = (props) => {
   return (
     <Container
       key={props.wish.id}
-      style={{ backgroundColor: "white", margin: "20 px" }}
+      style={{ backgroundColor: "rgb(207,232,252)", margin: "20 px" }}
     >
       <Card>
         <CardHeader
@@ -64,4 +64,4 @@ const Wish = (props) => {
   );
 };
 
-export default Wish;
+export default WishCard;
