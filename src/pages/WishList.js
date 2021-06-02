@@ -31,7 +31,7 @@ const WishList = (props) => {
         Ønskelisten
       </Typography>
       <Box mb={2}>
-        <Button
+        <Button 
           component={Link}
           to="/add"
           variant="contained"
@@ -41,6 +41,19 @@ const WishList = (props) => {
           Oprette
         </Button>
       </Box>
+
+      {/* <TextField
+        variant="outlined"
+        label="Søg"
+        fullWidth
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <ExpandMore />
+            </InputAdornment>
+          ),
+        }}
+      /> */}
 
       <Grid container spacing={3}>
         {renderWishList()}

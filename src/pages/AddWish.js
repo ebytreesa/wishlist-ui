@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FormTextInput from "./FormTextInput";
+import FormTextInput from "../components/FormTextInput";
 import { Container, Typography, Button, TextField } from "@material-ui/core";
 
 export class AddWish extends React.Component {

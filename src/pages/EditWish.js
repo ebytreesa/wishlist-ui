@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import FormTextInput from "./FormTextInput";
+import FormTextInput from "../components/FormTextInput";
 import { Container, Typography, Button, TextField } from "@material-ui/core";
-import { spacing } from "@material-ui/system";
 
 export class EditWish extends React.Component {
   constructor(props) {
@@ -77,11 +76,10 @@ export class EditWish extends React.Component {
             error={this.state.linkError}
             wrapClass="controller"
           />
-          
+
           <Button type="submit" variant="contained" color="secondary">
             Gem
           </Button>
-          <input type="submit" value="Opdate" /> 
         </form>
       </Container>
     );
