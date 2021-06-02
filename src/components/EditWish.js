@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormTextInput from "./FormTextInput";
 import { Container, Typography, Button, TextField } from "@material-ui/core";
+import { spacing } from "@material-ui/system";
 
 export class EditWish extends React.Component {
   constructor(props) {
@@ -54,7 +55,6 @@ export class EditWish extends React.Component {
             error={this.state.titleError}
             wrapClass="controller"
           />
-
           <FormTextInput
             type="text"
             labelText="Description"
@@ -67,7 +67,6 @@ export class EditWish extends React.Component {
             error={this.state.descError}
             wrapClass="controller"
           />
-
           <FormTextInput
             type="text"
             labelText="Link"
@@ -78,41 +77,11 @@ export class EditWish extends React.Component {
             error={this.state.linkError}
             wrapClass="controller"
           />
-          {/* 
-          <input type="submit" value="Gem" /> */}
+          
           <Button type="submit" variant="contained" color="secondary">
             Gem
           </Button>
-          {/* <Input
-          type="text"
-          labelText="Title"
-          name="title"
-          placeholder=""
-          onChange={(newValue) => this.setState({ title: newValue })}
-          value={this.state.title}
-          wrapClass="controller"
-        />
-
-        <Input
-          type="text"
-          labelText="Description"
-          name="dec"
-          placeholder=""
-          onChange={(newValue) => this.setState({ description: newValue })}
-          value={this.state.description}
-          wrapClass="controller"
-        />
-
-        <Input
-          type="text"
-          labelText="ink"
-          name="link"
-          placeholder=""
-          onChange={(newValue) => this.setState({ link: newValue })}
-          value={this.state.link}
-          wrapClass="controller"
-        />     
-        <input type="submit" value="Opdate" /> */}
+          <input type="submit" value="Opdate" /> 
         </form>
       </Container>
     );
