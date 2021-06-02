@@ -15,7 +15,6 @@ function FormTextInput(props) {
       <TextField
         className={classes.field}
         label={props.labelText}
-        variant={props.label}
         fullWidth       
         variant="outlined"
         name={props.text}

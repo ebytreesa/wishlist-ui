@@ -19,7 +19,6 @@ const WishCard = (props) => {
   return (
     <Container
       key={props.wish.id}
-      style={{ backgroundColor: "rgb(207,232,252)", margin: "20 px" }}
     >
       <Card>
         <CardHeader
