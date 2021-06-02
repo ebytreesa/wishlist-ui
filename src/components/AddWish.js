@@ -25,22 +25,14 @@ export class AddWish extends React.Component {
     if (this.state.link === "") {
       this.setState({ linkError: true });
     }
-    // if (
-    //   this.state.title === "" ||
-    //   this.state.description === "" ||
-    //   this.state.link === ""
-    // ) {
-    //   alert("Alle feler skal udfyldes");
-    //   return;
-    // } else {
+    
     if (this.state.title && this.state.description && this.state.link) {
       this.props.addWishHandler(this.state);
       this.setState({ title: "", description: "", link: "" });
       this.props.history.push("/");
     }
 
-    // }
-    console.log(this.state);
+    
   };
   render() {
     return (
