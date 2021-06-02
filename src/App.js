@@ -1,9 +1,8 @@
 import "./App.css";
-import { Container } from "@material-ui/core";
+import { Box, Container } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
-
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import WishList from "./components/WishList";
+import WishList from "./pages/WishList";
 import AddWish from "./components/AddWish";
 import EditWish from "./components/EditWish";
 import Button from "./components/Button";
@@ -110,7 +109,8 @@ const App = () => {
     );
   };
   return (
-    <div className="App">
+    <Container maxWidth='lg' fixed style={{ backgroundColor: '#cfe8fc' }}>
+      {/* <Container maxWidth='lg' fixed style={{ backgroundColor: '#cfe8fc' }}> */}
       {/* <AddWish addWishHandler={addWishHandler} showAddWish /> */}
       {/* {wishes.length > 0 ? (
         <WishList
@@ -151,7 +151,8 @@ const App = () => {
           />
         </Switch>
       </Router>
-    </div>
+      
+    </Container>
   );
 };
 export default App;
