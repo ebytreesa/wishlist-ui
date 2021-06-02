@@ -1,24 +1,66 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Button from "./Button";
+import {
+  Container,
+  Card,
+  TextField,
+  IconButton,
+  Typography,
+  Button,
+  Box,
+} from "@material-ui/core";
+import { CardHeader } from "@material-ui/core";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from '@material-ui/core/CardContent';
+import { DeleteOutlined } from "@material-ui/icons";
+import EditIcon from "@material-ui/icons/Edit";
 
 const Wish = (props) => {
   return (
-    <div
+    <Container
       key={props.wish.id}
       style={{ backgroundColor: "white", margin: "20 px" }}
     >
-      <Button onClick={() => props.onDelete(props.wish.id)} text="Fjern" />
-      <Link
-        to={{ pathname: `/edit/${props.wish.id}`, state: { wish: props.wish } }}
-      >
-        opdate
-      </Link>
+      <Card>
+        <CardHeader
+          action={
+            <>
+              <IconButton
+                component={Link}
+                to={{
+                  pathname: `/edit/${props.wish.id}`,
+                  state: { wish: props.wish },
+                }}
+              >
+                <EditIcon />
+              </IconButton>
 
-      <h5>{props.wish.title}</h5>
-      <p>{props.wish.description}</p>
-      <a href="{props.wish.link}">{props.wish.link}</a>
-    </div>
+              <IconButton onClick={() => props.onDelete(props.wish.id)}>
+                <DeleteOutlined />
+              </IconButton>
+            </>
+          }
+          title={props.wish.title}
+        />
+
+        <CardContent>
+          <Typography component="p" ml={2} variant="body2">
+            {props.wish.description}
+          </Typography>
+        </CardContent>
+
+        <CardActions>
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={() => window.open(props.wish.link)}
+          >
+            Link
+          </Button>
+        </CardActions>
+      </Card>
+      {/* <Button onClick={() => props.onDelete(props.wish.id)} text="Fjern" /> */}
+    </Container>
   );
 };
 
