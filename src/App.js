@@ -3,8 +3,8 @@ import { Box, Container } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import WishList from "./pages/WishList";
-import AddWish from "./components/AddWish";
-import EditWish from "./components/EditWish";
+import AddWish from "./pages/AddWish";
+import EditWish from "./pages/EditWish";
 import Button from "./components/Button";
 
 // export default class App extends React.Component
