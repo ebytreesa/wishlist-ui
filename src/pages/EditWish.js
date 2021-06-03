@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import FormTextInput from "../components/FormTextInput";
-import { Container, Typography, Button, TextField } from "@material-ui/core";
+import { Container, Typography, Button } from "@material-ui/core";
 
 export class EditWish extends React.Component {
   constructor(props) {
