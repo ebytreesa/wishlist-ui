@@ -34,5 +34,5 @@ This project is a web application using React and material-ui to create, update 
 ## Technologies
 Project is created with:
 * React: 8.0
-* material ui
-* laravel backend for API.
+* Material ui
+* Laravel backend for API.
