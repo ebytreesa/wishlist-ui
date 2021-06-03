@@ -1,11 +1,10 @@
 import "./App.css";
-import { Box, Container } from "@material-ui/core";
+import {  Container } from "@material-ui/core";
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import WishList from "./pages/WishList";
 import AddWish from "./pages/AddWish";
 import EditWish from "./pages/EditWish";
-import Button from "./components/Button";
 
 // export default class App extends React.Component
 // {
@@ -49,8 +48,9 @@ import Button from "./components/Button";
 // }
 
 const App = () => {
-  const [showAddWish, setAddWish] = useState(false);
   const [wishes, setWishes] = useState([]);
+  const [searchText, setSearchText] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
     const getData = async () => {
@@ -104,12 +104,27 @@ const App = () => {
     console.log(data.data);
     setWishes(
       wishes.map((item) => {
-        return item.id == data.data.id ? { ...data.data } : item;
+        return item.id === data.data.id ? { ...data.data } : item;
       })
     );
   };
+
+  const getSearchResults = (value) => {
+    setSearchText(value);
+    if (searchText !== "") {
+      const newWishList = wishes.filter((wish) => {
+        return Object.values(wish)
+          .join(" ")
+          .toLowerCase()
+          .includes(searchText.toLowerCase());
+      });
+      setSearchResults(newWishList);
+    } else {
+      setSearchResults(wishes);
+    }
+  };
   return (
-    <Container maxWidth='lg' fixed style={{ backgroundColor: '#cfe8fc' }}>
+    <Container maxWidth="lg" fixed style={{ backgroundColor: "#cfe8fc" }}>
       {/* <Container maxWidth='lg' fixed style={{ backgroundColor: '#cfe8fc' }}> */}
       {/* <AddWish addWishHandler={addWishHandler} showAddWish /> */}
       {/* {wishes.length > 0 ? (
@@ -129,8 +144,10 @@ const App = () => {
             render={(props) => (
               <WishList
                 {...props}
-                wishes={wishes}
+                wishes={searchText.length < 1 ? wishes : searchResults}
+                searchText={searchText}
                 onDelete={deleteWishHandler}
+                getSearchResults={getSearchResults}
               />
             )}
           />
@@ -151,7 +168,6 @@ const App = () => {
           />
         </Switch>
       </Router>
-      
     </Container>
   );
 };
