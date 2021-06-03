@@ -1,20 +1,18 @@
-# Getting Started with Create React App
+# Wish list React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Running the app
 
-In the project directory, you can run:
+From the project root, run:
 
 ```npm start```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
+This will start the app. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
 ## General info
-This project is a web application using React and material-ui to create, update and show a list of wish items. It is also possible to seach for a specific item. Wishes are managed through a Laravel API. Some screen shots of the web application is shown below.
+This project is a web application using React and material-ui to create, update and show a list of wish items. It is also possible to seach for a specific item. Wishes are managed through a Laravel API. Each operation on the wish item is a CRUD operation in the Laravel API. Some screen shots of the web application is shown below.
 <br/>
 <img src="./screenshots/mainpage.png" alt="home page" style="width:300px;"/>
 <br/>
