@@ -18,11 +18,13 @@ This project is a web application using React and material-ui to create, update 
 <br/>
 <img src="./screenshots/mainpage.png" alt="home page" style="width:300px;"/>
 <br/>
+
 <img src="./screenshots/create.png" alt="Create page" style="width:300px;"/>
 <br/>
 
 <img src="./screenshots/edit.png" alt="Edit page" style="width:300px;"/>
 <br/>
+
 <img src="./screenshots/search.png" alt="Search page" style="width:300px;"/>
 <br/>
 
